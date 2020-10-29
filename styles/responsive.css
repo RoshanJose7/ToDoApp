@@ -1,0 +1,8 @@
+@media screen and (max-width: 768px) {
+	#nav-logo {
+		margin-left: 10px;
+	}
+	.page {
+		margin: 2.5rem auto;
+	}
+}

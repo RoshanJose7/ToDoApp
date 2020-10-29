@@ -69,7 +69,7 @@ export default function SignUp() {
 				</button>
 				&nbsp; or &nbsp;
 				<button onClick={() => GoogleLogin()} disabled={loading}>
-					<i className='fab fa-google'></i>
+					<i className='fab fa-google fa-2x' />
 				</button>
 				<div className='w-100 text-center mt-3'>
 					<Link href='/forgotpassword'>

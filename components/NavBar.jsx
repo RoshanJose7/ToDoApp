@@ -7,25 +7,15 @@ export default function NavBar() {
 
 	return (
 		<nav className='flex justify-between items-center py-4'>
-			<p className='text-2xl font-bold text-grey-800'>
+			<p id='nav-logo' className='text-2xl font-bold text-grey-800'>
 				<Link href='/'>
 					<a className='text-red-400'>ToDo App</a>
 				</Link>
 			</p>
 			<div className='flex'>
-				{!currentUser && (
-					<a className='rounded py-2 px-4 mr-2 bg-blue-500 text-white hover:bg-blue-600' href='/signup'>
-						SignUp
-					</a>
-				)}
-				{!currentUser && (
-					<a className='rounded py-2 px-4 bg-blue-500 text-white hover:bg-blue-600' href='/login'>
-						Login
-					</a>
-				)}
 				{currentUser && (
 					<img
-						style={{ marginRight: '10px', height: '40px', width: '45px' }}
+						style={{ marginRight: '10px', width: '40px' }}
 						src={currentUser.photoURL}
 						alt={currentUser.displayName}
 					/>

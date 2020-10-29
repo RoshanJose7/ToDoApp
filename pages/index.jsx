@@ -99,7 +99,7 @@ export default function Home() {
 
 	if (currentUser) {
 		return (
-			<div>
+			<div className='page'>
 				<Head>
 					<title>Home</title>
 				</Head>
