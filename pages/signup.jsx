@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
+import { useAuth } from '../contexts/AuthContext';
 import { useState, useRef } from 'react';
 import { signInWithGoogle } from './api/db/firebase';
 
@@ -8,7 +9,7 @@ export default function SignUp() {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const confirmPasswordRef = useRef();
-
+	const { signup } = useAuth();
 	const [error, setError] = useState('');
 	const [success, setSuccess] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -17,10 +18,11 @@ export default function SignUp() {
 		try {
 			setError('');
 			setLoading(true);
-			await login(emailRef.current.value, passwordRef.current.value);
+			await signup(emailRef.current.value, passwordRef.current.value);
 			Router.push('/');
-		} catch {
-			setError('Failed to log in');
+		} catch (err) {
+			console.log(err);
+			setError(err.code);
 		}
 
 		setLoading(false);
